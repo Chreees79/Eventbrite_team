@@ -19,8 +19,6 @@ end
 3.times do
   Event.create(title: Faker::Movie.title, start_date: DateTime.parse("2022-12-12 20:00"), duration: 35, description: Faker::TvShows::TheFreshPrinceOfBelAir.quote, price: rand(1..1000), location: Faker::TvShows::HeyArnold.location, admin: User.all.sample)
 end
-e = Event.create(title: Faker::Movie.title, start_date: DateTime.parse("2022-12-12 20:00"), duration: 35, description: Faker::TvShows::TheFreshPrinceOfBelAir.quote, price: 3521, location: Faker::TvShows::HeyArnold.location, admin: User.all.sample)
-
 
 # FILL JOIN TABLE -------------------------------------------
 
