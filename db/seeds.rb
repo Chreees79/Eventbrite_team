@@ -13,7 +13,6 @@ require 'faker'
   User.create(email: Faker::Internet.email, encrypted_password: "tequilabière" , description: Faker::Movies::BackToTheFuture.quote, first_name: Faker::Games::Heroes.name, last_name: Faker::FunnyName.name)
 end
 
-
 # CREATION OF EVENTS ---------------------------------------
 
 3.times do
