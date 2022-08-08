@@ -7,10 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-#  CREATION OF USERS --------------------------------------
-
+#  CREATION OF USERS ------------------------------------
 10.times do
-  User.create(email: Faker::Internet.email, encrypted_password: "tequilabière" , description: Faker::Movies::BackToTheFuture.quote, first_name: Faker::Games::Heroes.name, last_name: Faker::FunnyName.name)
+  User.create(email: "#{Faker::Games::Pokemon.name}@yopmail.com", encrypted_password: "tequilabière", description: Faker::Movies::BackToTheFuture.quote, first_name: Faker::Games::Heroes.name, last_name: Faker::FunnyName.name)
 end
 
 # CREATION OF EVENTS ---------------------------------------
@@ -26,4 +25,3 @@ for i in 1..3
     Attendance.create(event_id: i, customer: User.all.sample, stripe_customer_id: Faker::Blockchain::Bitcoin.address)
   end
 end
-

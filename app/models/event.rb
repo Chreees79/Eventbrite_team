@@ -25,4 +25,6 @@ class Event < ApplicationRecord
     end
   end
 
+
+
 end
