@@ -12,8 +12,9 @@
   <body>
     <ul class="nav nav-tabs">
       <li class="nav-item">
-        <a href="#" class="nav-link active">Eventbrite</a>
+        <%= link_to "Eventbrite", root_path, class: 'nav-link active' %>
       </li>
+      <% if user_signed_in? == false %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">session</a>
         <div class="dropdown-menu">
@@ -21,13 +22,15 @@
           <%= link_to "Se connecter", new_user_session_path, class: 'dropdown-item' %>
         </div>
       </li>
+      <% else %>
        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mon profil</a>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#">Mon profil</a>
-          <a class="dropdown-item" href="#">Se déconnecter</a>
+          <%= link_to "Se déconnecter", destroy_user_session_path, class: 'dropdown-item', method: :delete %>
         </div>
       </li>
+      <% end %>
     </ul>
 
   
