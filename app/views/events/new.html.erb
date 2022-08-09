@@ -1,2 +1,36 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
+<%= form_with url: events_path, method: :post, local: true do |f| %>
+      <div class="form-group">
+        <%= f.label :start_date, "Date de l'évènement", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.date_field :start_date, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :duration, "Durée (en min):", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.number_field :duration, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :title, "Titre:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+      <div class="form-group">
+        <%= f.label :description, "Description, lâche toi!:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_area :description, class: "form-control" %>
+        </div>
+      <div class="form-group">
+        <%= f.label :price, "Prix, dis c'est combien ?:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.number_field :price, class: "form-control" %>
+        </div>
+      <div class="form-group">
+        <%= f.label :location, "lieux:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :location, class: "form-control" %>
+        </div>
+      </div>
+      <%= f.submit "Créer évènement", class: "btn btn-default btn-primary" %>  
+ <% end %>
