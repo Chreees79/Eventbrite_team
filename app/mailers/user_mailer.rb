@@ -12,4 +12,5 @@ class UserMailer < ApplicationMailer
     @url = 'http://eventbrite.fr/event'
     mail(to: @user.email, subject: 'Un nouveau participant à votre évènement de merde')
   end
+
 end
