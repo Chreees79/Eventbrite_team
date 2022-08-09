@@ -1,7 +1,12 @@
 <div class="jumbotron">
   <div class="container">
     <h1 class="display-3"><%= @event.title %></h1>
-    <p><% @event.admin%></p>
-    <p><%= @event.description%></p>
+    <p>Organisateur: <%= @event.admin.email %></p>
+    <p>Description: <%= @event.description%></p>
+    <p>nombre de participants: <%= @event.customers.length%></p>
+    <p>Date début: <%= @event.display_date(@event.start_date)%></p>
+    <p>Date de fin: <%= @event.display_date(@event.end_date) %></p>
+    <p>Lieux: <%= @event.location %></p>
+    <p>Prix: <%= @event.price %></P>
   </div>
 </div>

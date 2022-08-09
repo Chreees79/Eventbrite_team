@@ -10,37 +10,57 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
   <body>
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs bg-dark">
       <li class="nav-item">
-        <%= link_to "Eventbrighter", root_path, class: 'nav-link active' %>
+        <%= link_to "Eventbrighter", root_path, class: 'nav-link active bg-dark text-light' %>
       </li>
       <li class="nav-item">
-        <%= link_to "Nouvel évènement", new_event_path, class: 'nav-link'%>
+        <%= link_to "New évènement", new_event_path, class: 'nav-link text-light'%>
       </li>
       <% if user_signed_in? == false %>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">session</a>
-        <div class="dropdown-menu">
-          <%= link_to "S'inscrire", new_user_registration_path, class: 'dropdown-item' %>
-          <%= link_to "Se connecter", new_user_session_path, class: 'dropdown-item' %>
+      <li class="nav-item dropdown"></li>
+        <a class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">session</a>
+        <div class="dropdown-menu dropdown-menu-dark">
+          <%= link_to "S'inscrire", new_user_registration_path, class: 'dropdown-item text-light' %>
+          <%= link_to "Se connecter", new_user_session_path, class: 'dropdown-item text-light' %>
         </div>
       </li>
       <% else %>
        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mon profil</a>
-        <div class="dropdown-menu">
-          <%= link_to "Mon profil", user_path(current_user.id), class: 'dropdown-item' %>
-          <%= link_to "Se déconnecter", destroy_user_session_path, class: 'dropdown-item', method: :delete %>
+        <a class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mon profil</a>
+        <div class="dropdown-menu dropdown-menu-dark">
+          <%= link_to "Mon profil", user_path(current_user.id), class: 'dropdown-item text-light' %>
+          <%= link_to "Se déconnecter", destroy_user_session_path, class: 'dropdown-item text-light', method: :delete %>
         </div>
       </li>
       <% end %>
     </ul>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+    <% if success %>
+      <p class="alert alert-success"><%= success %></p>
+    <% end %>
 
-  
+    <div style="padding: 50px">
     <%= yield %>
+    </div>
     <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  
+
+  <footer class="bg-light text-center text-lg-start">
+  <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(72 122 180 / .2);">
+      © 2022 Copyright:
+      <a class="text-dark" href="https://devalamer.fr/">Devalamer</a>
+  </div>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    
+  <!-- Copyright -->
+  </footer>
   </body>
-</html>
+  </html>
+
+  

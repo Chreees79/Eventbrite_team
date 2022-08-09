@@ -1,22 +1,25 @@
 <main role="main">
 
+
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">EventBrighter</h1>
-          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-          <%= link_to "Creer ton évènement", new_event_path, class: "btn btn-info btn-lg" %>
+          <h1 class="display-3 logo">EventBrighter</h1>
+          <hr class="my-2">
+          <p>Crée un évènement, inscris-toi, vis ta vie !</p>
+          <%= link_to "Crée ton évènement", new_event_path, class: "btn btn-info btn-lg" %>
         </div>
       </div>
 
-      <div class="container">
+      <div class="container"></div>
         <!-- Example row of columns -->
         <div class="row">
           <% @events.each do |event| %>
             <div class="col-md-4">
               <h2><%= event.title %></h2>
-              <h3><%= event.start_date %>, <%= event.price %>€</h3>
+              <h3><%= event.display_date(event.start_date) %></h3>
               <p>durée: <%= event.duration %> minutes</p>
+              <p>Prix: <%= event.price %>€</p>
               <%= link_to "Voir détails >>", event_path(event.id), class: 'btn btn-outline-info btn-lg' %>
             </div>
           <% end %>
