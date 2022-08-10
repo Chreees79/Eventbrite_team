@@ -14,11 +14,4 @@ class UsersController < ApplicationController
   def update
     current_user.update
   end
-
-def is_user?
-  if current_user == find_user_id
-    return true
-  end
-end
-
 end
