@@ -8,5 +8,6 @@
     <p>Date de fin: <%= @event.display_date(@event.end_date) %></p>
     <p>Lieux: <%= @event.location %></p>
     <p>Prix: <%= @event.price %></P>
+    <%=button_to "participer", checkout_create_path, remote: true %>
   </div>
 </div>

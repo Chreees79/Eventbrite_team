@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
 include EventsHelper
 include UsersHelper
+include AttendancesHelper
 add_flash_types :info, :error, :success, :alert
 before_action :configure_devise_parameters, if: :devise_controller?
 
