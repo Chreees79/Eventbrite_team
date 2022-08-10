@@ -4,7 +4,6 @@ app link - [Eventbrighter](https://eventbrite-team.herokuapp.com)
 
 This was a project to do on week 7 of our Fullstack Bootcamp (Hi THP !)
 
-
 ![](https://media.giphy.com/media/duNowzaVje6Di3hnOu/giphy-downsized-large.gif)
 
 Dans ce projet, tu vas reprendre le projet de la veille pour y construire tes premières vues. Tu vas installer Devise sur ton application et construire les premières vues.
@@ -25,36 +24,21 @@ Avec ceci, tu as une belle application où les gens peuvent voir la liste des é
 
 Demain nous allons ajouter les fonctionnalités pour rejoindre un événement et ton application sera prête et fonctionnelle pour être montrée à la Terre entière. À partir de jeudi on implémentera des fonctionnalités pas indispensables, mais qui vont agrémenter l'expérience utilisateur (gestion des images, interface administrateur).
 
-
 ![](https://media.giphy.com/media/Ri1zOvYjWaykpyhy30/giphy-downsized-large.gif)
-
 
 This project was developed in peer programming with a part of the the Vocal_15 team : [@Chreees79](https://github.com/Chreees79) / [@GuillaumeBrthlt](https://github.com/GuillaumeBrthlt) / [@linahello](https://github.com/linahello) / [@LoiseauB](https://github.com/LoiseauB) / [@xko0](https://github.com/xko0) !
 
-
-
 ![](https://giphy.com/clips/fazeclan-celebration-birthday-happy-fWBiMUGXGHBECOJ50Q)
-
-
-
 
 ### How to acces
 
-
-
 [Eventbrighter](https://eventbrite-team.herokuapp.com) - (https://eventbrite-team.herokuapp.com/)
-
 
 ![](https://media.giphy.com/media/CzbiCJTYOzHTW/giphy.gif)
 
-
 Something to get into the mood [here](https://www.youtube.com/watch?v=fKKNPLowteY)
 
-
-
 ### Authors Details:
-
-
 
 👤 **the famous and infamous Vocal_15**
 
@@ -64,21 +48,13 @@ Something to get into the mood [here](https://www.youtube.com/watch?v=fKKNPLowte
 - [@LoiseauB](https://github.com/LoiseauB)
 - [@xko0](https://github.com/xko0) !
 
-
-
-
 ### Show your support
-
-
 
 [Un Dev A La Mer](http://www.devalamer.fr/)
 
 Give us a ⭐ Star on GitHub — it helps!
 
 ~~ https://github.com/linahello/Eventbrite_team ~~
-
-
-
 
 ## lntégrer Stripe version 2019
 
@@ -96,13 +72,11 @@ Avec ça, vous pouvez déjà vous amuser à faire tout un tas de fake paiements 
 
 Tant que vous utiliserez les **clefs d'API Stripe réservées au test**, ce sera toujours des données bidons, mais c'est quand même déjà la classe à Dallas 😎
 
-*Ceci étant dit...*
+_Ceci étant dit..._
 
 Ce que nous avons ici est la version de Stripe Checkout dite **"Legacy"**, a.k.a à l'ancienne, pour le paiement en ligne.
 
 Alors, dans les paragraphes qui suivent, je vous propose d'**intégrer Stripe version 2019**, pour que vous ayez des formulaires de paiement BG sur votre site !
-
-
 
 ## 2. Historique et contexte
 
@@ -113,15 +87,13 @@ Alors, dans les paragraphes qui suivent, je vous propose d'**intégrer Stripe ve
 
 Mais aujourd'hui, **cette version pose 2 problèmes majeurs** :
 
-- Niveau Webdesign, on ne va pas se mentir, ça semble **un poil vieillot tout ça**. *Je ne juge pas hein... Mais un peu quand même* 🙈 Plus sérieusement, vous pouvez faire le test avec vos proches, et voir comment ils perçoivent le paiement via le bouton bleu turquoise, en comparaison à d'autres standards plus actuels (Google Pay, Apple Pay etc.)
+- Niveau Webdesign, on ne va pas se mentir, ça semble **un poil vieillot tout ça**. _Je ne juge pas hein... Mais un peu quand même_ 🙈 Plus sérieusement, vous pouvez faire le test avec vos proches, et voir comment ils perçoivent le paiement via le bouton bleu turquoise, en comparaison à d'autres standards plus actuels (Google Pay, Apple Pay etc.)
 
 - Bien plus touchy encore que le côté cosmétique, il se trouve que **les formulaires Legacy ne sont plus conformes aux [normes européennes](https://apresta.fr/blog/nouvelle-norme-de-paiement-sca/#:~:text=La%20norme%2C%20ou%20l'authentification,jour%2C%20d'autres%20pas.) en matière de paiement en ligne** 😱 Concrètement, sur Legacy, vous n'avez pas "3D Secure" (vous savez, le texto / notification de votre banque avant la suite du paiement en ligne). Donc imaginons que demain un client européen de votre boutique en ligne passe par là, eh bien il est fort probable que ce soit directement sa banque qui fasse blocus lors de l'étape tant attendue du paiement.
 
 La bonne nouvelle dans tout ça : Stripe a évidemment prévu le coup avec une **nouvelle version BG comme tout pour vos paiements en ligne 😎** :
 
 ![Illustration Legacy](https://stripe.com/img/docs/checkout/checkout-preview.png)
-
-
 
 ## 3. La ressource
 
@@ -139,7 +111,7 @@ Voici d'abord [un tutoriel vidéo](https://www.youtube.com/watch?v=dzCEMMfx8cQ) 
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/dzCEMMfx8cQ/0.jpg)](https://www.youtube.com/watch?v=dzCEMMfx8cQ)
 
- I see you celles et ceux qui préfèrent l'écrit, ça arrive juste après 😇
+I see you celles et ceux qui préfèrent l'écrit, ça arrive juste après 😇
 
 ### 3.2. Pré-requis
 
@@ -155,21 +127,21 @@ Si vous arrivez à ceci sur votre propre tableau de bord Stripe, c'est bon signe
 
 ![illustration dashboard Stripe](https://kinsta.com/fr/wp-content/uploads/sites/4/2018/05/vos-cles-api-stripe.png)
 
-#### 3.2.3. *Nouveauté* - Ajouter un nom public d'entreprise à votre compte Stripe
+#### 3.2.3. _Nouveauté_ - Ajouter un nom public d'entreprise à votre compte Stripe
 
 - Oui, ça peut paraître chelou cette histoire, mais il faut impérativement le faire, car ce nom apparaîtra entre autres sur les formulaires de paiement nouvelle génération.
 - Tant que vous serez sur des paiements fictifs réalisés via les clefs API de test, je ne vois vraiment pas où seraient les conséquences juridiques ici. Bref, vous pouvez y aller, même avec un nom 100% certifié fake dédié au test 👌
-- Par contre, pour des paiements réels évidemment la situation ne sera pas la même 😬 *Merci Captain Obvious, Epidode 2*
+- Par contre, pour des paiements réels évidemment la situation ne sera pas la même 😬 _Merci Captain Obvious, Epidode 2_
 - Vous devriez trouver easy où effectuer cette configuration. En comparaison avec d'autres gros logiciels en ligne, le dashboard de Stripe est plutôt facile à lire. Mais parce que ça me fait plaisir, voici [la manip](https://www.loom.com/share/3ae7add227b748308ee079ef2fa555fb) si besoin.
 
 #### 3.2.4. Configurer un fichier .env
 
-* Bon, à ce stade vous connaissez la musique : vu qu'on est sur des infos assez sensibles avec les clefs d'API, mieux vaut les stocker en lieu sûr dans un fichier `.env`, avec le `.gitignore` qui va avec.
-* Si besoin, vous pouvez toujours revenir sur [cette ressource en lien avec le projet Twitter](https://www.thehackingproject.org/fr/dashboard/courses/4/lessons/16) pour un tuto complet sur "dotenv" et un rappel de son utilité.
+- Bon, à ce stade vous connaissez la musique : vu qu'on est sur des infos assez sensibles avec les clefs d'API, mieux vaut les stocker en lieu sûr dans un fichier `.env`, avec le `.gitignore` qui va avec.
+- Si besoin, vous pouvez toujours revenir sur [cette ressource en lien avec le projet Twitter](https://www.thehackingproject.org/fr/dashboard/courses/4/lessons/16) pour un tuto complet sur "dotenv" et un rappel de son utilité.
 
 #### 3.2.5. Configurer l'initializer Stripe
 
-* Même démarche que pour Legacy : il s'agit de créer un fichier `stripe.rb` dans `config/initializers`. et d'y ajouter les lignes suivantes :
+- Même démarche que pour Legacy : il s'agit de créer un fichier `stripe.rb` dans `config/initializers`. et d'y ajouter les lignes suivantes :
 
   ```
   Rails.configuration.stripe = {
@@ -178,17 +150,17 @@ Si vous arrivez à ceci sur votre propre tableau de bord Stripe, c'est bon signe
   }Stripe.api_key = Rails.configuration.stripe[:secret_key]
   ```
 
-* Bien entendu, il faudra que les dénominations `PUBLISHABLE_KEY` et/ou `SECRET_KEY` matchent avec les noms que vous avez choisis dans votre fichier `.env` pour stocker les clefs d'API.
+- Bien entendu, il faudra que les dénominations `PUBLISHABLE_KEY` et/ou `SECRET_KEY` matchent avec les noms que vous avez choisis dans votre fichier `.env` pour stocker les clefs d'API.
 
 #### 3.2.6. Ajouter la Gem "Stripe" dans votre Gemfile
 
 On programme avec du Ruby, donc évidemment qu'il y a une Gem qui va avec 💎
 
-#### 3.2.7. *Nouveauté* - Appeler les scripts BG de Stripe dans votre code HTML
+#### 3.2.7. _Nouveauté_ - Appeler les scripts BG de Stripe dans votre code HTML
 
-* Et pour finir, on va appeler une **librairie de ressources gérées directement par Stripe : des scripts JS** en béton armé qui feront parfaitement le taff pour charger les formulaires de paiement en ligne BG sur votre page.
+- Et pour finir, on va appeler une **librairie de ressources gérées directement par Stripe : des scripts JS** en béton armé qui feront parfaitement le taff pour charger les formulaires de paiement en ligne BG sur votre page.
 
-* Rien de foufou à coder ici : dans `app/views/layouts/application`, vous pouvez juste ajouter ceci quelque part dans votre balise `<head>` :
+- Rien de foufou à coder ici : dans `app/views/layouts/application`, vous pouvez juste ajouter ceci quelque part dans votre balise `<head>` :
 
 ```
 <script src="https://js.stripe.com/v3/"></script>
@@ -198,9 +170,7 @@ On programme avec du Ruby, donc évidemment qu'il y a une Gem qui va avec 💎
 
 ##### Ca y est ! Tout est prêt pour brancher Stripe nouvelle génération sur votre app, ça mérite bien un petit meme des familles tout ça 😍
 
-<a href="https://imgflip.com/i/4sp3yq" style><img src="https://i.imgflip.com/4sp3yq.jpg" title="made at imgflip.com"/></a> 
-
-
+<a href="https://imgflip.com/i/4sp3yq" style><img src="https://i.imgflip.com/4sp3yq.jpg" title="made at imgflip.com"/></a>
 
 ### 3.3. Implémentation d'un "One-Time-Payment"
 
@@ -208,7 +178,7 @@ Allez, après toute cette mise en place, on va (enfin !) pouvoir coder concrète
 
 #### 3.3.1. Créer les routes vers la session de paiement
 
-* Dans le fichier `config/routes.rb`, ajouter les lignes suivantes :
+- Dans le fichier `config/routes.rb`, ajouter les lignes suivantes :
 
 ```
 scope '/checkout' do
@@ -218,40 +188,40 @@ scope '/checkout' do
 end
 ```
 
-* Que se passe-t-il avec ces lignes de code ?
-  * La ligne `post 'create'` va représenter la demande concrète de création d'une session sécurisée de paiement Stripe. Schématiquement, cette requête `POST` est envoyée à notre serveur, qui "fait suivre" le tout à Stripe via des appels d'API, qui lui-même nous renverra du contenu à l'écran.
-  * Le système de Stripe veut que lors d'une session de paiement, on indique 2 URLs de redirection : une URL `success` sur laquelle on atterrit lorsque la session arrive à son terme, et une URL `cancel` lorsque la session est annulée par le client ou que le paiement échoue.
-* Mais dis-donc Jamy, qu'est-ce que c'est que ce machin de `scope '/checkout'` ?
-  * La notion de `scope`, tout comme celle de `namespace`, peut être vue comme un "pack" de routes qui sera accompagné de son ou ses controllers.
-  * Si le sujet vous branche, je vous laisse apprécier la [différence entre scope et namespace](https://devblast.com/b/rails-5-routes-scope-vs-namespace).
-  * Ici, j'ai choisi le `scope` pour minimiser la quantité de code à produire. Avec cette configuration de routes et un seul et unique controller `checkout`, j'aurai tout ce qu'il me faut pour exécuter le paiement sur mon app.
-* Et pourquoi ne pas avoir utilisé ce bon vieux `resources` ici ?
-  * Ca pourrait sembler être une bonne idée... Mais en fait pas tant que ça 😅
-  * Je m'explique : dans mon `scope` checkout, j'ai déjà mes deux routes customisées `success`et `cancel`, qui sortent des clous si on utilise un `resources`.
-  * Par ailleurs, en partant sur un `resources`, on crée par défaut des actions "edit", "update", "delete" etc. qui n'ont pas vraiment lieu d'être ici. [Bon chance](https://www.youtube.com/watch?v=cOsqUta2ol4&feature=youtu.be&t=45) si vous voulez permettre à l'utilisateur d'éditer ses infos de paiement sur Stripe avec un combo edit/update 😅
-  * Bref, la seule route du schéma de `resources` qui compte, c'est la ligne `post 'create'`, donc autant s'en contenter !
+- Que se passe-t-il avec ces lignes de code ?
+  - La ligne `post 'create'` va représenter la demande concrète de création d'une session sécurisée de paiement Stripe. Schématiquement, cette requête `POST` est envoyée à notre serveur, qui "fait suivre" le tout à Stripe via des appels d'API, qui lui-même nous renverra du contenu à l'écran.
+  - Le système de Stripe veut que lors d'une session de paiement, on indique 2 URLs de redirection : une URL `success` sur laquelle on atterrit lorsque la session arrive à son terme, et une URL `cancel` lorsque la session est annulée par le client ou que le paiement échoue.
+- Mais dis-donc Jamy, qu'est-ce que c'est que ce machin de `scope '/checkout'` ?
+  - La notion de `scope`, tout comme celle de `namespace`, peut être vue comme un "pack" de routes qui sera accompagné de son ou ses controllers.
+  - Si le sujet vous branche, je vous laisse apprécier la [différence entre scope et namespace](https://devblast.com/b/rails-5-routes-scope-vs-namespace).
+  - Ici, j'ai choisi le `scope` pour minimiser la quantité de code à produire. Avec cette configuration de routes et un seul et unique controller `checkout`, j'aurai tout ce qu'il me faut pour exécuter le paiement sur mon app.
+- Et pourquoi ne pas avoir utilisé ce bon vieux `resources` ici ?
+  - Ca pourrait sembler être une bonne idée... Mais en fait pas tant que ça 😅
+  - Je m'explique : dans mon `scope` checkout, j'ai déjà mes deux routes customisées `success`et `cancel`, qui sortent des clous si on utilise un `resources`.
+  - Par ailleurs, en partant sur un `resources`, on crée par défaut des actions "edit", "update", "delete" etc. qui n'ont pas vraiment lieu d'être ici. [Bon chance](https://www.youtube.com/watch?v=cOsqUta2ol4&feature=youtu.be&t=45) si vous voulez permettre à l'utilisateur d'éditer ses infos de paiement sur Stripe avec un combo edit/update 😅
+  - Bref, la seule route du schéma de `resources` qui compte, c'est la ligne `post 'create'`, donc autant s'en contenter !
 
 #### 3.3.2. Ajouter un bouton de paiement qui crée la session Stripe
 
-* À ce stade, vous avez sans doute déjà une view HTML disponible avec votre produit à payer, ou alors un "panier" composé de plusieurs produits, si vous êtes dans une logique de boutique en ligne.
-* Voici donc du code que vous pouvez ajouter en bas de votre page HTML pour intégrer un bouton de paiement créant la session Stripe :
+- À ce stade, vous avez sans doute déjà une view HTML disponible avec votre produit à payer, ou alors un "panier" composé de plusieurs produits, si vous êtes dans une logique de boutique en ligne.
+- Voici donc du code que vous pouvez ajouter en bas de votre page HTML pour intégrer un bouton de paiement créant la session Stripe :
 
 ```
 <%= button_to "Passer commande (NEXT GEN)", checkout_create_path(total: MONTANT À PAYER), class: "btn btn-primary", remote: true %>
 ```
 
-* Quelques subtilités :
-  * `button_to` permet d'exécuter sans problème la requête `POST`, a.k.a l'action de créer la session. For some reason, si on met un `link_to` ça ne fonctionnera pas 😭
-  * Il est important ici de passer comme argument un `MONTANT À PAYER`.
-    * Charge à chacun donc d'extraire le prix du produit/panier et de l'insérer ici.
-    * Dans le contexte de la boutique en ligne, nous avions codé ceci : `(total: @cart.total)`. Cela permettait de récupérer le montant final du panier de l'utilisateur, afin que le paiement soit basé sur un prix cohérent.
-    * Si vous ne l'avez pas encore codé, en attendant, vous pouvez toujours écrire en dur : `(total: 10)`. De cette façon, le produit vaudra 10 euros dans le paiement effectué sur le formumaire Stripe.
-  * Enfin, `remote: true` est une requête AJAX, qui s'avèrera indispensable pour "injecter" du code Javascript dans notre page HTML. Et ce code Javascript... est tout simplement le formulaire de paiement Stripe lui-même ! Bref, impossible de s'en passer 😁
+- Quelques subtilités :
+  - `button_to` permet d'exécuter sans problème la requête `POST`, a.k.a l'action de créer la session. For some reason, si on met un `link_to` ça ne fonctionnera pas 😭
+  - Il est important ici de passer comme argument un `MONTANT À PAYER`.
+    - Charge à chacun donc d'extraire le prix du produit/panier et de l'insérer ici.
+    - Dans le contexte de la boutique en ligne, nous avions codé ceci : `(total: @cart.total)`. Cela permettait de récupérer le montant final du panier de l'utilisateur, afin que le paiement soit basé sur un prix cohérent.
+    - Si vous ne l'avez pas encore codé, en attendant, vous pouvez toujours écrire en dur : `(total: 10)`. De cette façon, le produit vaudra 10 euros dans le paiement effectué sur le formumaire Stripe.
+  - Enfin, `remote: true` est une requête AJAX, qui s'avèrera indispensable pour "injecter" du code Javascript dans notre page HTML. Et ce code Javascript... est tout simplement le formulaire de paiement Stripe lui-même ! Bref, impossible de s'en passer 😁
 
 #### 3.3.3. Ecrire les méthodes du controller "checkout"
 
-* On commence avec un petit `rails generate controller checkout` pour avoir le fichier à disposition.
-* Et voici donc ce que vous pouvez ajouter dans `app/controllers/checkout.rb` :
+- On commence avec un petit `rails generate controller checkout` pour avoir le fichier à disposition.
+- Et voici donc ce que vous pouvez ajouter dans `app/controllers/checkout.rb` :
 
 ```
 class CheckoutController < ApplicationController
@@ -287,18 +257,18 @@ class CheckoutController < ApplicationController
 end
 ```
 
-* Quelques subtilités :
-  * Notre montant total à payer, passé tout à l'heure en argument dans le bouton de paiement, est de retour ici : `@total = params[:total].to_d`.
-  * Comme indiqué précédemment, le système Stripe demande de paramétrer des URLs de redirection `success` et `cancel`, que l'on retrouve codées dans la méthode "create".
-  * Le paragraphe `respond_to do...` reprend la requête AJAX `remote: true` vue précédemment, pour injecter du contenu Javascript dans la page `create.js.erb` , qui sera une sorte de "réceptacle" à notre formulaire de paiement.
-  * Le code `@session` de la méthode "success" vise à extraire de l'info sur la session de paiement qui vient d'avoir lieu. Le code `@payment_intent`, quant à lui, vise à extraire le montant qui a *réellement* été payé par l'utilisateur. Logique, nous sommes sur la page `success`, donc forcément celà signifie que l'utilisateur aura bien payé son produit.
-* Mais dis-donc Jamy, pourquoi ne pas avoir mis de code `@payment_intent` dans la méthode "cancel", comme tu l'as fait dans la vidéo ?
-  * En effet cher viewer, votre vision d'aigle m'impressionne ! Dans le [pas à pas en vidéo](https://www.youtube.com/watch?v=dzCEMMfx8cQ), j'ai écrit dans la méthode "cancel" du code tout à fait équivalent à "success".
-  * *Et alors, c'était une bonne idée ?* Oui, mais non 😱 !
-  * Je m'explique : quand un utilisateur est redirigé sur "cancel", cela signifie :
-    * Que le paiement a échoué lors de la session.
-    * **OU ALORS**, qu'il a simplement appuyé sur un bouton "Annuler" qui apparaît quelque part sur le formulaire avant même de procéder au paiement... Et voilà précisément tout le problème de coder un `@payment_intent` ici : la session n'a jamais réellement commencé, donc votre programme ne va rien capter si on lui demande tout à coup de publier à l'écran un `@payment_intent` qui n'existe pas 😬
-  * Bref, je vous laisse gérer cette méthode "cancel" du controller et y mettre du code plus adéquat si cela s'avère pertinent.
+- Quelques subtilités :
+  - Notre montant total à payer, passé tout à l'heure en argument dans le bouton de paiement, est de retour ici : `@total = params[:total].to_d`.
+  - Comme indiqué précédemment, le système Stripe demande de paramétrer des URLs de redirection `success` et `cancel`, que l'on retrouve codées dans la méthode "create".
+  - Le paragraphe `respond_to do...` reprend la requête AJAX `remote: true` vue précédemment, pour injecter du contenu Javascript dans la page `create.js.erb` , qui sera une sorte de "réceptacle" à notre formulaire de paiement.
+  - Le code `@session` de la méthode "success" vise à extraire de l'info sur la session de paiement qui vient d'avoir lieu. Le code `@payment_intent`, quant à lui, vise à extraire le montant qui a _réellement_ été payé par l'utilisateur. Logique, nous sommes sur la page `success`, donc forcément celà signifie que l'utilisateur aura bien payé son produit.
+- Mais dis-donc Jamy, pourquoi ne pas avoir mis de code `@payment_intent` dans la méthode "cancel", comme tu l'as fait dans la vidéo ?
+  - En effet cher viewer, votre vision d'aigle m'impressionne ! Dans le [pas à pas en vidéo](https://www.youtube.com/watch?v=dzCEMMfx8cQ), j'ai écrit dans la méthode "cancel" du code tout à fait équivalent à "success".
+  - _Et alors, c'était une bonne idée ?_ Oui, mais non 😱 !
+  - Je m'explique : quand un utilisateur est redirigé sur "cancel", cela signifie :
+    - Que le paiement a échoué lors de la session.
+    - **OU ALORS**, qu'il a simplement appuyé sur un bouton "Annuler" qui apparaît quelque part sur le formulaire avant même de procéder au paiement... Et voilà précisément tout le problème de coder un `@payment_intent` ici : la session n'a jamais réellement commencé, donc votre programme ne va rien capter si on lui demande tout à coup de publier à l'écran un `@payment_intent` qui n'existe pas 😬
+  - Bref, je vous laisse gérer cette méthode "cancel" du controller et y mettre du code plus adéquat si cela s'avère pertinent.
 
 #### 3.3.4. Ajouter du contenu dans les views "checkout"
 
@@ -336,16 +306,14 @@ stripe.redirectToCheckout({
 
 ![confused Travolta](https://media.giphy.com/media/8Iv5lqKwKsZ2g/source.gif)
 
-
-
 ## 4. Points importants à retenir
 
-- Stripe Checkout Legacy... 
+- Stripe Checkout Legacy...
   - C'est très bien pour découvrir l'univers du paiement en ligne Stripe et se familiariser avec la gestion des APIs sur votre app Rails.
   - En revanche, le système de paiement lui-même est obsolète, ou en passe de le devenir très prochainement.
 - Autrement dit, si vous souhaitez mettre en route un système de paiement en ligne viable sur votre site, pas le choix, il va vous falloir migrer de la version Legacy vers la version 2019, ou implémenter cette dernière directement.
 - Pour brancher cette nouvelle version sur Rails, je ne vous cache pas que l'info n'est clairement pas des plus accessibles. Je vous invite donc à voir ou revoir le [pas à pas en vidéo](https://www.youtube.com/watch?v=dzCEMMfx8cQ), ou suivre les étapes de cette ressource pour y parvenir sans difficulté.
-- Si l'univers de Stripe vous intéresse et que vous souhaitez aller plus loin dans l'implémentation, je serais ravi de vous fournir d'autres infos pour vous aider. Voici mon contact sur Discord : [Quentin PLAUD](Quentin PLAUD#7166). Autant que les heures passées en tête-à-tête avec la documentation Stripe, les repos GitHub ou autres réjouissances servent au plus grand nombre 😁 
+- Si l'univers de Stripe vous intéresse et que vous souhaitez aller plus loin dans l'implémentation, je serais ravi de vous fournir d'autres infos pour vous aider. Voici mon contact sur Discord : [Quentin PLAUD](Quentin PLAUD#7166). Autant que les heures passées en tête-à-tête avec la documentation Stripe, les repos GitHub ou autres réjouissances servent au plus grand nombre 😁
 
 ## 5. Pour aller plus loin
 
