@@ -8,6 +8,9 @@
     <p>Date de fin: <%= @event.display_date(@event.end_date) %></p>
     <p>Lieux: <%= @event.location %></p>
     <p>Prix: <%= @event.price %>€</P>
-    <%=button_to "participer", checkout_create_path, remote: true %>
   </div>
+    <% if is_admin? == false || is_customer? == false %>
+  <%=link_to "Rejoindre l'évènement", new_event_attendance_path(params[:id]) %>
+  <%= link_to "Valider", event_attendances_path(params[:id]), method: :post %>
+  <% end %>
 </div>
