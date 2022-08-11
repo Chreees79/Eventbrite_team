@@ -65,3 +65,4 @@ gem 'table_print'
 gem 'dotenv-rails'
 gem 'devise'
 gem 'stripe' #'~> 5.28'
+

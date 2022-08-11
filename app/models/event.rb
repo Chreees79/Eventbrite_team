@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  has_one_attached :event_picture
   before_validation :is_past?
   before_validation :is_positif_and_multiple_of_5?
   validates :start_date, presence: true

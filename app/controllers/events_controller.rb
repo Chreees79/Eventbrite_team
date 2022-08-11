@@ -12,6 +12,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.admin = current_user
+    event.event_picture.attach(params[:event_picture])
     if @event.save
       redirect_to event_path(@event.id), success: "Votre event est crééeééeéée!"
     else
