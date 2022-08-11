@@ -1,24 +1,4 @@
-<div class="jumbotron">
-  <div class="container">
-    <h1 class="display-3"><%= @event.title %></h1>
-    <p>Organisateur: <%= @event.admin.email %></p>
-    <p>Description: <%= @event.description%></p>
-    <p>nombre de participants: <%= @event.customers.length%></p>
-    <p>Date début: <%= @event.display_date(@event.start_date)%></p>
-    <p>Date de fin: <%= @event.display_date(@event.end_date) %></p>
-    <p>Lieux: <%= @event.location %></p>
-    <p>Prix: <%= @event.price %>€</P>
-  </div>
-  <% if is_admin? == false && is_customer? == false %>
-  <%=link_to "Rejoindre l'évènement", new_event_attendance_path(params[:id]) %>
-  <!-- <%= link_to "Valider", event_attendances_path(params[:id]), method: :post %> -->
-  <% end %>
-  <% if is_admin? == true %>
-    <%= form_tag event_event_pictures_path(@event), multipart: true do %>
-    <%= file_field_tag :event_picture %>
-    <%= submit_tag "mettre à jour" %>
-    <% end %>
-  <%end%>
+<!--
   <h3>Avatar actuel</h3>
 <%if @event.event_picture.attached?%>
   <%= image_tag @event.event_picture, alt: 'avatar' %>
@@ -26,3 +6,49 @@
   <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur batard ===</p>
 <%end%>
 </div>
+-->
+<body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Page Content-->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="text-center mb-5">
+                                <h1 class="fw-bolder"><%= @event.title %></h1>
+                                 <p>Organisateur: <%= @event.admin.email %><br>
+                                 <br>
+                                 <span style="font-size: 1.4rem"> Description: <%= @event.description%></span><br>
+                                 <br>
+                                 Date début: <%= @event.display_date(@event.start_date)%><br>
+                                 Date de fin: <%= @event.display_date(@event.end_date) %><br>
+                                 Lieux: <%= @event.location %><br>
+                                 </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gx-5 justify-content-center">
+                        <!--<div class="col-12"><img class="img-fluid rounded-3 mb-5" src="https://dummyimage.com/1300x700/343a40/6c757d" alt="..." /></div>-->
+                        <%= image_tag @event.event_picture, class: "img-fluid rounded-3 mb-5", alt: 'avatar', style: "max-height: 1300px; width: auto;" %>
+                    </div>
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="text-center mb-5">
+                                <p class="lead fw-normal text-muted">nombre de participants: <%= @event.customers.length%><br>Prix: <%= @event.price %>€</p>
+                                <% if is_admin? == false && is_customer? == false %>
+                                    <%=link_to "Rejoindre l'évènement", new_event_attendance_path(params[:id]) %>
+                                    <!-- <%= link_to "Valider", event_attendances_path(params[:id]), method: :post %> -->
+                                    <% end %>
+                                  <% if is_admin? == true %>
+                                    <%= form_tag event_event_pictures_path(@event), multipart: true do %>
+                                    <%= file_field_tag :event_picture %>
+                                    <%= submit_tag "mettre à jour", class: "btn btn-info btn-primary" %>
+                                  <% end %>
+                                <%end%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
