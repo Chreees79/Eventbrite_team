@@ -29,7 +29,7 @@
                     </div>
                     <div class="row gx-5 justify-content-center">
                         <!--<div class="col-12"><img class="img-fluid rounded-3 mb-5" src="https://dummyimage.com/1300x700/343a40/6c757d" alt="..." /></div>-->
-                        <%= image_tag @event.event_picture, class: "img-fluid rounded-3 mb-5", alt: 'avatar', style: "max-height: 1300px; width: auto;" %>
+                        <%= image_tag @event.event_picture, class: "img-fluid rounded-3 mb-5", alt: 'avatar', style: "max-height: 1300px; width: auto;" if event.event_picture.attached? %>
                     </div>
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-6">
