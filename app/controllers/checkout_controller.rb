@@ -1,5 +1,7 @@
 class CheckoutController < ApplicationController
   def create
+    @event = find_event
+    StoreId.new.store(@event.id)
     @price = find_price
     #event = Event.find(params[:event]).as_json
     @session = Stripe::Checkout::Session.create(
@@ -25,6 +27,7 @@ class CheckoutController < ApplicationController
   def success
     @session = Stripe::Checkout::Session.retrieve(params[:session_id])
     @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
+    StoreId.new.create(current_user.id)
   end
 
   def cancel
