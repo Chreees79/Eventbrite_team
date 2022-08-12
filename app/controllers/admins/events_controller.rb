@@ -21,10 +21,7 @@ class Admins::EventsController < ApplicationController
   end
 
   def update
-    puts '#########################'
-    puts event_params
-    puts '#########################'
-    find_event.update(validated: params[:validated])
+    find_event.update(validated: params[:event].fetch('validated'))
     redirect_to admins_path
   end
 
