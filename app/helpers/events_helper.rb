@@ -16,4 +16,5 @@ module EventsHelper
     @event = find_event
     @event.customers.include?(current_user)
   end
+
 end

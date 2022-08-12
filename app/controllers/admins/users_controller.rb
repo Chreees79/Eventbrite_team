@@ -1,4 +1,5 @@
 class Admins::UsersController < ApplicationController
+  require_relative '../../helpers/admins_helper'
   require_relative '../../helpers/users_helper'
   before_action :require_admin
 
@@ -14,12 +15,6 @@ class Admins::UsersController < ApplicationController
   def destroy
     find_user_id.destroy
     redirect_to admins_path
-  end
-
-  def require_admin
-    unless current_user.app_admin?
-      redirect_to root_path
-    end
   end
 
   private

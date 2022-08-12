@@ -31,4 +31,6 @@ class Event < ApplicationRecord
   def display_date(date)
     date.strftime('le %d/%m/%Y à %H:%M')
   end
+
+  
 end

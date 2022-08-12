@@ -77,12 +77,14 @@
                     <td><%= event.start_date %></td>
                     <td><%= event.duration %></td>
                     <td><%= event.admin.email %></td>
-                    <% if user.app_admin? %>
-                        <td style="color: green">admin 👑</td>
-                    <%else%>
-                        <td style="color: grey">Pégu</td>
+                    <% if event.validated == true %>
+                        <td style="color: green">Accepté ✓</td>
+                    <%elsif event.validated == nil%>
+                        <td style="color: grey">En attente batard ⏳</td>
+                    <%else %>
+                        <td style="color: red">Refusé ☠</td>
                     <% end %>
-                    <td><%= link_to 'valider'%>
+                    <td><%= link_to 'valider'%> / <%= link_to 'refuser'%></td>
                   </tr>
                 <% end %>
               </tbody>

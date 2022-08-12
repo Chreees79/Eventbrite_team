@@ -1,6 +1,8 @@
 class Admins::EventsController < ApplicationController
+  require_relative '../../helpers/admins_helper'
   require_relative '../../helpers/events_helper'
   before_action :require_admin
+
   def index
     @events = Event.all
   end
@@ -18,11 +20,6 @@ class Admins::EventsController < ApplicationController
     redirect_to admins_path
   end
 
-  def require_admin
-    unless current_user.app_admin?
-      redirect_to root_path
-    end
-  end
   private
 
   def event_params
