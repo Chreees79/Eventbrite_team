@@ -26,8 +26,7 @@
                             <div class="text-center mb-5">
                                 <p class="lead fw-normal text-muted">nombre de participants: <%= @event.customers.length%><br>Prix: <%= @event.price %>€</p>
                                 <%= form_for @event, url: admins_event_path(params[:id]), method: "PATCH", html: { class: "form-signin mt-3" } do |form| %>
-                                <%= form.select :validated, [['valider', 1], ['refuser', 0]], class: 'form-control' %>
-                                <%= link_to "laisser en attente", admins_path %>
+                                <%= form.select :validated, [['valider', 1], ['refuser', 0],['Laisser en attente', nil]], class: 'form-control' %>
                                 <%= form.submit "enregistrer", class: "btn btn-primary" %>
                                 <% end %>                                    
                             </div>
