@@ -3,15 +3,15 @@ class CheckoutController < ApplicationController
     @event = find_event
     StoreId.new.store(@event.id)
     @price = find_price
-    #event = Event.find(params[:event]).as_json
+    # event = Event.find(params[:event]).as_json
     @session = Stripe::Checkout::Session.create(
-      #metadata: {event: event["id"]},
+      # metadata: {event: event["id"]},
       payment_method_types: ['card'],
       line_items: [
         {
           name: 'coucou',
           currency: 'eur',
-          amount: (@price*100),
+          amount: (@price * 100),
           quantity: 1
         },
       ],
@@ -30,6 +30,5 @@ class CheckoutController < ApplicationController
     StoreId.new.create(current_user.id)
   end
 
-  def cancel
-  end
+  def cancel; end
 end

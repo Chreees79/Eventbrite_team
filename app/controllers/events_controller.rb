@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create] 
-  
+  before_action :authenticate_user!, only: %i[new create]
+
   def index
     @events = Event.all
   end
@@ -14,16 +14,16 @@ class EventsController < ApplicationController
     @event.admin = current_user
     @event.event_picture.attach(params[:event_picture])
     if @event.save
-      redirect_to event_path(@event.id), success: "Votre event est crééeééeéée!"
+      redirect_to event_path(@event.id), success: 'Votre event est crééeééeéée!'
     else
-      redirect_to new_event_path, alert: "You failed"
+      redirect_to new_event_path, alert: 'You failed'
     end
   end
 
   def show
     @event = find_event
   end
-  
+
   private
 
   def event_params

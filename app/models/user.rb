@@ -5,12 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   after_create :welcome_send
   has_many :attendances
-  has_many :attending_events, foreign_key: 'customer_id', class_name: "Event", through: :attendances
-  has_many :admin_events, foreign_key: 'admin_id', class_name: "Event"
-
+  has_many :attending_events, foreign_key: 'customer_id', class_name: 'Event', through: :attendances
+  has_many :admin_events, foreign_key: 'admin_id', class_name: 'Event'
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
   end
-
 end

@@ -1,12 +1,9 @@
 class AttendancesController < ApplicationController
   before_action :authenticate_user!, only: [:new]
- 
-  def index
-  end
 
-  def new
-  end
+  def index; end
 
-  def create
-  end
+  def new; end
+
+  def create; end
 end
