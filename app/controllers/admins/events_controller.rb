@@ -20,9 +20,17 @@ class Admins::EventsController < ApplicationController
     redirect_to admins_path
   end
 
+  def update
+    puts '#########################'
+    puts event_params
+    puts '#########################'
+    find_event.update(validated: params[:validated])
+    redirect_to admins_path
+  end
+
   private
 
   def event_params
-    params.permit(:start_date, :duration, :title, :description, :price, :location)
+    params.require(:event).require(:validated).permit(:validated)
   end
 end
