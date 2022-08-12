@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   root 'events#index'
-  namespace :admin do
-    root 'admin#index'
+  namespace :admins do
     resources :events, only: %i[index show edit update destroy]
     resources :users
   end
+  resources :admins, only: [:index]
   resources :events, only: %i[index new create show] do
     resources :attendances, only: %i[new index create]
     resources :event_pictures, only: [:create]

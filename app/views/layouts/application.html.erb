@@ -19,6 +19,11 @@
       <li class="nav-item">
         <%= link_to "New évènement", new_event_path, class: 'nav-link text-light'%>
       </li>
+      <% if app_admin? %>
+        <li class="nav-item">
+          <%= link_to "Dashboard", admins_path, class: 'nav-link text-light'%>
+        </li>
+      <% end %>
       <% if user_signed_in? == false %>
       <li class="nav-item dropdown"></li>
         <a class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Connexion</a>
