@@ -20,6 +20,10 @@
           <%= f.label :email, "Email" %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
         </div>
+        <div class="form-group">
+          <%= f.label "Passer admin du site" %> <br />
+          <%= f.check_box :app_admin %>
+        </div>
         <div class="actions mt-5">
           <%= f.submit "Modifier", class: "btn btn-lg btn-info btn-block" %>
         </div>
