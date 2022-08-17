@@ -1,0 +1,67 @@
+    
+<div class="container mt-4 card p-0">
+
+  <div class="event_header d-flex flex-row flex-wrap">
+    <div class="col-md-8 p-0">
+      <% if @event.event_picture.attached? == false %>
+        <img src="https://images.unsplash.com/photo-1496024840928-4c417adf211d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", class="w-100" style="max-height: 500px; border-top-left-radius: 8px">
+      <% else %>
+        <%= image_tag @event.event_picture, alt: 'avatar', class: "w-100", style: "max-height: 500px; border-top-left-radius: 8px", focusable:"false"%>
+      <%end%>
+    </div>
+    <div class="col-md-4 p-3 d-flex flex-column" style="border-bottom: 1px solid rgba(255, 255, 255, 0.231);">
+      <h1 class="mb-4"><%= @event.title %></h1>
+      <h3>Date de début: <%= @event.display_date(@event.start_date)%></h3>
+      <h3>Date de fin: <%= @event.display_date(@event.end_date) %></h3>
+      <h4>Organisateur: <%= @event.admin.first_name %> <%= @event.admin.last_name %></h4>
+      <p class="mt-auto">Prix: <%=@event.price%> €</p>
+      <p class="mt-auto">Lieu: <%=@event.location%> </p>
+    </div>
+  </div>
+
+  <div class=" d-flex flex-row flex-wrap" style="border-bottom: 1px solid rgba(255, 255, 255, 0.231)" >
+    <div class="col-md-8 p-0">
+      <i class="fa-solid fa-heart fa-xl mx-2 mt-3"></i>
+      <i class="fa-solid fa-share-nodes fa-xl mx-2"></i>
+      <i class="fa-solid fa-bell fa-xl mx-2"></i>
+    </div>
+    <div class="col-md-4 p-3">
+      <button type="button" class="btn btn-primary btn-lg">S'inscrire !<i class="fa-solid fa-users ms-2"></i></button>
+    </div>
+  </div>
+
+
+
+  <div class="row" >
+    <div class="col-md-8 p-4">
+      <h3>A propos de cet évènement</h3>
+      <p>
+        <%= @event.description %>
+      </p>
+    </div>
+    <div class="col-md-4 p-3 ">
+      <p>Date et heure de l'évènement: <%= @event.display_date(@event.start_date)%></p>
+      <p>Durée: <%= @event.duration %></p>
+      <p>Ville: <%= @event.location %></p>
+      
+ 
+    <div class="row gx-5 justify-content-center">
+      <div class="col-lg-6">
+        <div class="text-center mb-5">
+          <p class="lead fw-normal text-muted">nombre de participants: <%= @event.customers.length%><br>Prix: <%= @event.price %> €</p>
+          <% if is_admin? == false && is_customer? == false %>
+            <%=link_to "Rejoindre l'évènement", new_event_attendance_path(params[:id]) %>
+            <!-- <%= link_to "Valider", event_attendances_path(params[:id]), method: :post %> -->
+          <% end %>
+          <% if is_admin? == true %>
+            <%= form_tag event_event_pictures_path(@event), multipart: true do %>
+            <%= file_field_tag :event_picture %>
+            <%= submit_tag "mettre à jour", class: "btn btn-info btn-primary" %>
+            <% end %>
+          <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

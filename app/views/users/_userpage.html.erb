@@ -1,0 +1,30 @@
+    
+<div class="container mt-4 card p-0">
+
+  <div class="event_header d-flex flex-row flex-wrap">
+    <div class="col-md-8 p-0">
+      <img src="https://images.unsplash.com/photo-1621550418658-5539addecea8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80", class="w-100" style="max-height: 500px; border-top-left-radius: 8px">
+    </div>
+    <div class="col-md-4 p-3 d-flex flex-column justify-content-around" style="border-bottom: 1px solid rgba(255, 255, 255, 0.231);">
+      <h1 class="mb-4"><%= @user.first_name %> <%= @user.last_name %></h1>
+      <%= link_to "Éditer", edit_user_registration_path, class:"btn btn-info"%>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="row p-3" >
+    <h3>A propos de <%= @user.first_name %></h3>
+    <p> <%= @user.description %> </p>
+  </div>
+
+</div>
+<div>
+  <i class="fa-brands fa-facebook"></i>
+  <i class="fa-brands fa-linkedin-in"></i>
+  <i class="fa-brands fa-linkedin"></i>
+  <i class="fa-brands fa-twitter"></i>
+  <i class="fa-brands fa-square-twitter"></i>
+</div>

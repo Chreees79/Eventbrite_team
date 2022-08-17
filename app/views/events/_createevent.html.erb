@@ -1,0 +1,39 @@
+<h2 class="text-center display-1">Création d'évènement</h2>
+
+<fieldset class="d-flex flex-column mx-auto" style="width: 50%">
+<%= form_with url: events_path, method: :post, local: true do |f| %>
+      <!-- Détails de l'évènement -->
+
+    <div class="form-group">
+      <%= f.label :start_date, "Date de l'évènement:", class: "form-label mt-4" %>
+      <%= f.datetime_field :start_date, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :duration, "Durée (en min):", class: "form-label mt-4" %>
+      <%= f.number_field :duration, class: "form-control" %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :title, "Titre:", class: "form-label mt-4" %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description, "Description de l'évènement", class: "form-label mt-4" %>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+ 
+    <div class="form-group">
+      <%= f.label :price, "Prix de l'évènement", class: "form-label mt-4" %>
+      <%= f.number_field :price, class: "form-control" %> 
+    </div>
+
+    <div class="form-group">
+      <%= f.label :location, "Lieu de l'évènement:", class: "form-label mt-4" %>
+      <%= f.text_field :location, class: "form-control" %>
+    </div>
+  
+      <%= f.submit "Créer évènement", class: "btn btn-primary mt-4" %>                               
+<% end %>        
+</fieldset>
